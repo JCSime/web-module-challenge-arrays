@@ -103,12 +103,11 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 //1 parameter which will be a place holder for the array
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
- //use pop to remove the last item
- //return array
+function removeLastFlavor(arr){
+ arr.pop();
+ return arr;
 }
-
+console.log(removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -123,11 +122,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 // 2 paprameters array / number (holding the place for an index)
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
-  //array[0]
+function getFlavorByIndex(array,i){
+  const finder = array[i];
+  return finder;
 }
-
+console.log(getFlavorByIndex(originalFlavors, 2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -144,13 +143,15 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 //2 parameters array and the string we want to remove 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
-  //loop though the array and check every index for the exact match of the string, if it exists then remove it using splice
-  //.splice(star, hot many items to delete);
-  //outside of the loop return array
-}
-
+function removeFlavorByName(arr, string){
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === string){
+      arr.splice(i, 1)
+    }
+    return arr
+  }
+};
+console.log(removeFlavorByName(originalFlavors, 'Rocky Road'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
